@@ -12,22 +12,20 @@
 int main() {
 	// init glfw
 	if ( !glfwInit() ) {
-		std::cout << "could not initialize glfw" << std::endl;
+		static_cast<void>(fprintf(stderr, "Could not initialize GLFW.\n"));
 		return -1;
 	}
-
+	
 	// create window
 	//glfwWindowHint(GLFW_RESIZABLE, false);
 	glfwWindowHint(GLFW_SAMPLES, 8);
 	GLFWwindow* win = glfwCreateWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "", nullptr, nullptr);
 	if (!win) {
-		std::cout << "could not create opengl window" << std::endl;
+		static_cast<void>(fprintf(stderr, "Could not create OpenGl window.\n"));
 		glfwTerminate();
 		return -1;
 	}
 	glfwMakeContextCurrent(win);
-
-	
 
 	// main loop
 	float angle = 0;
@@ -40,8 +38,6 @@ int main() {
 		// get window size
 		int screenWidth, screenHeight;
 		glfwGetWindowSize(win, &screenWidth, &screenHeight);
-
-		
 
 		// refresh screen
 		glfwSwapBuffers(win);
