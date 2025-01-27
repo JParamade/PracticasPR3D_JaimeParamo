@@ -2,7 +2,6 @@
 #pragma comment(linker, "/SUBSYSTEM:windows /ENTRY:mainCRTStartup")
 #endif
 
-
 #include "../lib/glfw/glfw3.h"
 #include <iostream>
 #include <vector>
